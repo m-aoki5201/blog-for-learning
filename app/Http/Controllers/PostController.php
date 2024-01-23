@@ -7,14 +7,23 @@ use App\Models\Post;
 
 class PostController extends Controller
 {
-        public function index(Post $post)
-    {
-        // ddd($post->post);
-        return $post->get();
+    //     public function index(Post $post)
+    // {
+    //     // ddd($post->post);
+    //     return $post->get();//$postの中身を戻り値にする。
+    //     // return view('index', compact('hello', 'hello_array')
 
-        // return $post->tosql();
-        // var_dump($post);
-    }
+    //     // return $post->tosql();
+    //     // var_dump($post);
+    // }
+       public function index(Post $post)//インポートしたPostをインスタンス化して$postとして使用。
+   {
+        // $posts = $post ;
+        
+      return view('posts.index', ['posts' => $post->get()]);//$postのデータ中身すべて取得（ $post->get()）し、'posts'としてbladeに返す。
+    // return view('posts.index')->with(['post' => $post->get()]); 
+   }
+    
 }
 
 // LaravelのEloquent ORMは、デフォルトではモデル名の複数形形式を使用して、テーブル名を自動的に推測します。
