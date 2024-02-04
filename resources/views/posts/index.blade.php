@@ -40,6 +40,11 @@
 	        
         </div>
         
+
+        <div class='paginate'>
+            {{ $posts->links() }}
+        </div>
+        
         <!-- 参照JSを記述 -->
         <!-- <script type="text/javascript" src="./JS/Practice01_3.js"></script>  -->
     </body>

@@ -20,7 +20,7 @@ class PostController extends Controller
    {
         // $posts = $post ;
         // dd($post->get());
-      return view('posts.index', ['posts' => $post->getByLimit()]);
+      return view('posts.index', ['posts' => $post->getPeginateByLimit(1)]);
     //$postのデータ中身すべて取得（ $post->get()）し、'posts'としてbladeに返す。
     // return view('posts.index')->with(['post' => $post->get()]); 
    }
