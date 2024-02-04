@@ -15,6 +15,11 @@ use App\Http\Controllers\PostController;
 
 Route::get('/posts', [PostController::class, 'index']);
 
-Route::get('/', function () {
-    return view('welcome');
+// Route::get('/', function () {
+//     return view('posts/index');
+// //postsフォルダ内のindex.blade.phpを指定。.blade.php省略
+// });
+
+Route::get('/blog', function () {
+    return view('posts.index');
 });
