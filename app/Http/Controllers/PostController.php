@@ -19,8 +19,9 @@ class PostController extends Controller
        public function index(Post $post)//インポートしたPostをインスタンス化して$postとして使用。
    {
         // $posts = $post ;
-        
-      return view('posts.index', ['posts' => $post->get()]);//$postのデータ中身すべて取得（ $post->get()）し、'posts'としてbladeに返す。
+        // dd($post->get());
+      return view('posts.index', ['posts' => $post->getByLimit()]);
+    //$postのデータ中身すべて取得（ $post->get()）し、'posts'としてbladeに返す。
     // return view('posts.index')->with(['post' => $post->get()]); 
    }
     
